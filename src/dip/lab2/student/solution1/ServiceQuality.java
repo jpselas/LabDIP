@@ -10,11 +10,6 @@ package dip.lab2.student.solution1;
  * @author johnny
  */
 public enum ServiceQuality {
-
-    /**
-     *
-     */
-   
-           GOOD, FAIR, POOR
+    GOOD, FAIR, POOR
     
 }

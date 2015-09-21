@@ -24,15 +24,25 @@ public class BaggageServiceTipCalculator implements TipCalculator{
     
     private ServiceQuality serviceQuality;
 
+    /**
+     *
+     * @param q checks for enum value 
+     * @param bags takes in how many bags they carried 
+     */
     public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
-        this.setServiceRating(q); // perform validation
+        this.setServiceRating(q); 
         this.setBagCount(bags);
 
-        baseTipPerBag = 1.00; // set default value
+        baseTipPerBag = 1.00; 
     }
+
+    /**
+     *
+     * @return returns the tip value after figuring out how many bags carried 
+     */
     @Override
-    public double getTip() {
-        double tip = 0.00; // always initialize local variables
+    public final double getTip() {
+        double tip = 0.00; 
 
         switch(serviceQuality) {
             case GOOD:
@@ -49,16 +59,24 @@ public class BaggageServiceTipCalculator implements TipCalculator{
         return tip;
     }
 
+    /**
+     *
+     * @param q sets the serviceQuality variable to the value of q
+     */
     public final void setServiceRating(ServiceQuality q) {
-        // No need to validate because enums provide type safety!
+        
         serviceQuality = q;
     }
 
-    public ServiceQuality getServiceQuality() {
+    /**
+     *
+     * @return
+     */
+    public final ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
 
-    public int getBagCount() {
+    public final int getBagCount() {
         return bagCount;
     }
 
@@ -70,11 +88,11 @@ public class BaggageServiceTipCalculator implements TipCalculator{
         this.bagCount = bagCount;
     }
 
-    public double getBaseTipPerBag() {
+    public final double getBaseTipPerBag() {
         return baseTipPerBag;
     }
 
-    public void setBaseTipPerBag(double baseTipPerBag) {
+    public final void setBaseTipPerBag(double baseTipPerBag) {
         if(baseTipPerBag < 0) {
             throw new IllegalArgumentException(
                     "error: base tip must be greater than or equal to zero");

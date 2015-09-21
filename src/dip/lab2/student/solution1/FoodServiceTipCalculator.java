@@ -24,13 +24,23 @@ public class FoodServiceTipCalculator implements TipCalculator{
     
     private ServiceQuality serviceQuality;
 
+    /**
+     *
+     * @param q checks for enum value 
+     * @param billAmt is the amount the bill is 
+     */
     public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
         this.setBill(billAmt);
     }
+
+    /**
+     *
+     * @return the tip value depending on which enum was selected and multiplying by the bill
+     */
     @Override
-    public double getTip() {
-        double tip = 0.00; // always initialize local variables
+    public final double getTip() {
+        double tip = 0.00; 
 
         switch(serviceQuality) {
             case GOOD:
@@ -47,6 +57,10 @@ public class FoodServiceTipCalculator implements TipCalculator{
         return tip;
     }
 
+    /**
+     *
+     * @param billAmt is taken in and the bill is set with the value of billAmt
+     */
     public final void setBill(double billAmt) {
         if(billAmt < minBill) {
             throw new IllegalArgumentException(BILL_ENTRY_ERR);
@@ -54,12 +68,20 @@ public class FoodServiceTipCalculator implements TipCalculator{
         bill = billAmt;
     }
 
+    /**
+     *
+     * @param q is the enum value taken in and set to the variable serviceQuality
+     */
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
 
-    public ServiceQuality getServiceQuality() {
+    /**
+     *
+     * @return the value in serviceQuality
+     */
+    public final ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
 
