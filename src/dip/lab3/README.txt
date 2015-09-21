@@ -89,7 +89,7 @@ ENCAPSULATE as much behavior as possible in your high-level class so that
 the Startup class knows as little as possible (Principle of Least Knowledge) 
 about the other classes in your program.  So to do this your Startup class must 
 ONLY talk to the high-level class -- never to the low-level classes. That means
-your program should have at least 6 classes: one startup, one high-level service
+your program should have at least 8 classes: one startup, one high-level service
 class, two input classes and two output classes. And you should be able to
 test the flexibility of your program by switching input and output objects 
 without breaking any code in your high level class or the low level classes.
