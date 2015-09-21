@@ -15,9 +15,9 @@ package dip.lab1.instructor.solution1;
  */
 public class HourlyEmployee implements Employee {
     // This class needs properties that the Salaried class does not
+   
     private double hourlyRate;
     private double totalHrsForYear;
-    
     /** 
      * Default constructor. If you provide this your code will be
      * fragile because there's no guarantee the properties above will be
