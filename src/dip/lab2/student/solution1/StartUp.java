@@ -30,8 +30,12 @@ public class StartUp {
         TipCalculator cal1 = new FoodServiceTipCalculator(ServiceQuality.GOOD,50);
         TipCalculator cal2 = new BaggageServiceTipCalculator(ServiceQuality.POOR,4);
         
-        System.out.println(cal1.getTip());
-        System.out.println(cal2.getTip());
+        TipService you = new TipService(cal1);
+        TipService youGuy = new TipService(cal2);
+        System.out.println(you.getTip(cal1));
+        System.out.println(youGuy.getTip(cal2));
+//        System.out.println(cal1.getTip());
+//        System.out.println(cal2.getTip());
         
     }
 

@@ -10,10 +10,22 @@ package dip.lab2.student.solution1;
  * @author johnny
  */
 public class TipService {
-    
-public double getBillTotal(TipCalculator t){
+    private TipCalculator t;
+public double getTip(TipCalculator t){
     return t.getTip();
     
 }
+
+    public TipService(TipCalculator t) {
+        this.t = t;
+    }
+
+    public TipCalculator getT() {
+        return t;
+    }
+
+    public void setT(TipCalculator t) {
+        this.t = t;
+    }
     
 }
